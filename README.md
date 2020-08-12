@@ -22,14 +22,14 @@ coursename, courseidnumber, username, useridnumber, sectionname, activityname
 ## Example csv
 
 ```csv
-coursename, username, sectionname, activityname
-digipolitech, lara.croft88, "Course Material", "Scorm Package"
-digipolitech, lara.croft88, "Course Material", "Reflection"
-digipolitech, gordon.freeman3, "Course Material", "Scorm Package"
+coursename, username, sectionname, activityname, courseidnumber,useridnumber
+digipolitech, lara.croft88, "Course Material", "Scorm Package",,
+digipolitech, lara.croft88, "Course Material", "Reflection",,
+digipolitech, gordon.freeman3, "Course Material", "Scorm Package",,
 ```
 
 
-If you specify both coursename/idnumber or username/idnumber it the idnumber will take precedence. Omit fields you don't need.
+If you specify both coursename/idnumber or username/idnumber it the idnumber will take precedence.
 
 ## Installation
 
