@@ -1,6 +1,6 @@
 # tool_uploadactivitycompletions
 
-An admin tool to allow import of completion results (as overrides) for any sort of activity using a text delimited file. Access it through site administration > tools or by typing in `/admin/tool/uploadactivitycompletions` after your moodle path.
+An admin tool to allow import of completion results (as overrides) for any sort of activity using a text delimited file. Access it through *Site Administration > Courses > Upload Activity Completions* or by typing in `/admin/tool/uploadactivitycompletions` after your moodle path.
 
 Use this tool to import manual user completions against activities within courses. Users will be manually enrolled as a student if required. Use a standard CSV file that contains the courses, users and activities to import completions against.
 
@@ -36,6 +36,18 @@ Install via the moodle plugin installer, or by git
 ```sh
 git clone https://github.com/frumbert/moodle-tool_uploadactivitycompletions.git admin/tool/uploadactivitycompletions
 ```
+
+## Usage
+
+Open up the tool and follow the instructions. Upload your CSV, specify the matching columns (or select None), continue and wait ...
+
+There is also a command line option:
+
+```sh
+sudo -u www-data /usr/bin/php admin/tool/uploadactivitycompletions/cli/uploadactivitycompletions.php
+--source=./completions.csv
+```
+
 
 ## Acknowledgements
 
