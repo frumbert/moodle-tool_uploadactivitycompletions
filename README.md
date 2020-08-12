@@ -1,6 +1,8 @@
 # tool_uploadactivitycompletions
 
-An admin tool to allow import of completion results (as overrides) for any sort of activity using a text delimited file. Access it through *Site Administration > Courses > Upload Activity Completions* or by typing in `/admin/tool/uploadactivitycompletions` after your moodle path.
+An admin tool to allow import of completion results (as overrides) for any sort of activity using a text delimited file. Uses the name of the section (topic) and name of the activity (mod) to determine the activity to be completed. Skips records where completion isn't enabled.
+
+Access it through *Site Administration > Courses > Upload Activity Completions* or by typing in `/admin/tool/uploadactivitycompletions` after your moodle path.
 
 Use this tool to import manual user completions against activities within courses. Users will be manually enrolled as a student if required. Use a standard CSV file that contains the courses, users and activities to import completions against.
 
