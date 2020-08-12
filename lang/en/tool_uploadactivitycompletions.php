@@ -64,6 +64,6 @@ $string['tool_intro'] = "
 </ul>
 <p>The csv column names are [<a download href='/admin/tool/uploadactivitycompletions/example.csv'>Sample</a>]:</p>
 <p><code>coursename, courseidnumber, username, useridnumber, sectionname, activityname</code></p>
-<p>If you specify both coursename/idnumber or username/idnumber it the idnumber will take precedence. Omit columns you don't require.</p>
+<p>If you specify both coursename/idnumber or username/idnumber it the idnumber will take precedence.</p>
 ";
 
