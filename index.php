@@ -92,7 +92,11 @@ if ($form2data = $mform2->is_cancelled()) {
     // First time.
     echo $OUTPUT->header();
     echo $OUTPUT->heading($pagetitle);
-    $mform2->display();
+    if (!completion_info::is_enabled_for_site()) {
+        echo get_string("completionnotenabledforsite");
+    } else {
+        $mform2->display();
+    }
     echo $OUTPUT->footer();
     die();
 }
