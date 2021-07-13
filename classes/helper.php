@@ -52,10 +52,10 @@ class tool_uploadactivitycompletions_helper {
         if (empty($record->uservalue)) {
             return false;
         }
-        if (empty($record->sectionname)) {
+        if (empty($record->sectionname) && strlen($record->sectionname) === 0) {
             return false;
         }
-        if (empty($record->activityname)) {
+        if (empty($record->activityname) && strlen($record->activityname) === 0) {
             return false;
         }
         return true;
@@ -100,12 +100,13 @@ class tool_uploadactivitycompletions_helper {
     }
 
     // given a course, section name and activity name, return the modinfo instance (cm)
+    // if section_name is "0" and section->name is null, it represents the first (un-namable) section
     public static function find_activity_in_section($course,$section_name,$activity_name) {
         $modinfo = get_fast_modinfo($course);
         $cminfo = $modinfo->get_cms();
         foreach ($cminfo as $inst) {
             $section = $inst->get_section_info();
-            if (strcasecmp($section_name, $section->name) == 0 && strcasecmp($activity_name, $inst->name) == 0) {
+            if ((($section_name === "0" && is_null($section->name)) || strcasecmp($section_name, $section->name) == 0) && strcasecmp($activity_name, $inst->name) == 0) {
                 return $inst;
             }
         }
@@ -145,7 +146,6 @@ class tool_uploadactivitycompletions_helper {
                 // get the user record
                 if ($user =self::get_user_by_field($record->userfield, $record->uservalue)) {
                     $response->user = $user;
-
                     if ($cm = self::find_activity_in_section($course,$record->sectionname,$record->activityname)) {
 
                             // ensure the user is enrolled in this course
